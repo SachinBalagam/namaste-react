@@ -11,6 +11,9 @@
 
 // const child = React.createElement("div", { id: "child" }, heading);
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
     React.createElement(
@@ -21,13 +24,13 @@ const parent = React.createElement("div", { id: "parent" }, [
           color: "blue",
         },
       },
-      "Hello World From child1-heading1"
+      "Namaste React 🚀"
     ),
     React.createElement(
       "h2",
       {
         id: "title2",
-        style: { color: "pink", fontSize: 12, backgroundColor: "white" },
+        style: { color: "pink", fontSize: 12 },
       },
       "Hello World From child1-heading2"
     ),
@@ -36,7 +39,7 @@ const parent = React.createElement("div", { id: "parent" }, [
     React.createElement(
       "h1",
       { id: "title3", style: { paddingLeft: 50 } },
-      "Hello World From child2-heading3"
+      "Hello Sachin From child2-heading3"
     ),
     React.createElement(
       "h2",
