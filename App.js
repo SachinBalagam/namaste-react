@@ -16,7 +16,7 @@ const parent = React.createElement("div", { id: "parent" }, [
     React.createElement(
       "h1",
       {
-        id: "heading1",
+        id: "title1",
         style: {
           color: "blue",
         },
@@ -26,7 +26,7 @@ const parent = React.createElement("div", { id: "parent" }, [
     React.createElement(
       "h2",
       {
-        id: "heading2",
+        id: "title2",
         style: { color: "pink", fontSize: 12, backgroundColor: "white" },
       },
       "Hello World From child1-heading2"
@@ -35,12 +35,12 @@ const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child2" }, [
     React.createElement(
       "h1",
-      { id: "heading3", style: { paddingLeft: 50 } },
+      { id: "title3", style: { paddingLeft: 50 } },
       "Hello World From child2-heading3"
     ),
     React.createElement(
       "h2",
-      { id: "heading4" },
+      { id: "title4" },
       "Hello World From child2-heading4"
     ),
   ]),
