@@ -1,14 +1,33 @@
 import { WEBSITE_LOGO } from "../utils/constants";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [value, setValue] = useState("Logout");
+
   return (
-    <div className="header-container">
-      <img src={WEBSITE_LOGO} alt="Website-logo" className="logo" />
-      <ul>
-        <li>Home</li>
-        <li>About us</li>
-        <li>Contact us</li>
-        <li>Cart</li>
+    <div className="flex justify-between items-center bg-pink-100 pl-3 pr-3 shadow-lg">
+      <img src={WEBSITE_LOGO} alt="Website-logo" className="w-20 pt-2 pb-2" />
+      <ul className="flex ">
+        <Link to="/" className="mr-5">
+          <li>Home</li>
+        </Link>
+        <Link to="/about" className="mr-5">
+          <li>About us</li>
+        </Link>
+        <Link to="/contact" className="mr-5">
+          <li>Contact us</li>
+        </Link>
+        <li className="mr-5">Cart</li>
+        <li>
+          <button
+            onClick={() => {
+              value === "Logout" ? setValue("Login") : setValue("Logout");
+            }}
+          >
+            {value}
+          </button>
+        </li>
       </ul>
     </div>
   );
