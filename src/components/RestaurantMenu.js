@@ -5,6 +5,8 @@ import MenuInfo from "./MenuInfo";
 const RestaurantMenu = () => {
   const [restaurantInfo, setRestaurantInfo] = useState(null);
 
+  const [showIndex, setShowIndex] = useState(0);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -47,8 +49,15 @@ const RestaurantMenu = () => {
       <h4>{locality}</h4>
 
       <h1 className="my-5 underline">Menu</h1>
-      {menuList.map((each) => (
-        <MenuInfo data={each.card.card} key={each.card.card.title} />
+      {menuList.map((each, index) => (
+        <MenuInfo
+          data={each.card.card}
+          key={each.card.card.title}
+          showItems={index === showIndex ? true : false}
+          changeIndex={() => {
+            setShowIndex(index);
+          }}
+        />
       ))}
     </div>
   );

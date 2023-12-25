@@ -1,14 +1,21 @@
 import { WEBSITE_LOGO } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import UseOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [value, setValue] = useState("Logout");
+
+  const status = UseOnlineStatus();
+
+  const { name } = useContext(UserContext);
 
   return (
     <div className="flex justify-between items-center bg-pink-100 pl-3 pr-3 shadow-lg">
       <img src={WEBSITE_LOGO} alt="Website-logo" className="w-20 pt-2 pb-2" />
       <ul className="flex ">
+        <li className="mr-3">Online Status : {status ? "✅" : "❌"}</li>
         <Link to="/" className="mr-5">
           <li>Home</li>
         </Link>
@@ -28,6 +35,7 @@ const Header = () => {
             {value}
           </button>
         </li>
+        <li className="font-bold ml-2">({name})</li>
       </ul>
     </div>
   );

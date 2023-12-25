@@ -2,12 +2,9 @@ import { CARD_IMG } from "../utils/constants";
 import { useState } from "react";
 
 const MenuInfo = (props) => {
-  const { data } = props;
-  //   console.log(data);
-
-  const [showItems, setShowItems] = useState(false);
+  const { data, showItems, changeIndex } = props;
   const onAccordianClick = () => {
-    setShowItems(!showItems);
+    changeIndex();
   };
   return (
     <div
@@ -38,37 +35,5 @@ const MenuInfo = (props) => {
     </div>
   );
 };
-
-{
-  /* {showItems && (
-              <div>
-                <ul>
-                  {each.card.card.itemCards.map((each) => (
-                    <li
-                      className="border-b my-5 mx-10 flex justify-between items-center"
-                      key={each.card.info.id}
-                    >
-                      <div>
-                        <h1 className="text-left font-bold">
-                          {each.card.info.name}
-                        </h1>
-                        <h1 className="text-left">
-                          ₹{each.card.info.price / 100}
-                        </h1>
-                        <h1 className="text-left my-3">
-                          {each.card.info?.description}
-                        </h1>
-                      </div>
-                      <img
-                        src={CARD_IMG + each.card.info.imageId}
-                        alt="image"
-                        className="w-[100] mb-3"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )} */
-}
 
 export default MenuInfo;

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import mockData from "../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -11,6 +12,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState([]);
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  const { name, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -81,6 +84,12 @@ const Body = () => {
         >
           Filter Button
         </button>
+        <label className="ml-5">UserName : </label>
+        <input
+          className="border"
+          value={name}
+          onChange={(event) => setUserName(event.target.value)}
+        />
       </div>
       <div className="flex flex-wrap justify-center">
         {filteredListofRestaurants.map((eachRes) =>
