@@ -3,9 +3,13 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UseOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [value, setValue] = useState("Logout");
+
+  const cartItems = useSelector((each) => each.cart.items);
+  // console.log(cartItems);
 
   const status = UseOnlineStatus();
 
@@ -25,7 +29,10 @@ const Header = () => {
         <Link to="/contact" className="mr-5">
           <li>Contact us</li>
         </Link>
-        <li className="mr-5">Cart</li>
+        <Link to="/cart" className="mr-5 font-bold">
+          <li>Cart - ({cartItems.length}-items)</li>
+        </Link>
+
         <li>
           <button
             onClick={() => {

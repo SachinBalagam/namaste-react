@@ -1,29 +1,28 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CARD_IMG } from "../utils/constants";
-import { useState } from "react";
-import { addItem } from "../utils/cartSlice";
+import { clearCart } from "../utils/cartSlice";
 
-const MenuInfo = (props) => {
-  const { data, showItems, changeIndex } = props;
-  const onAccordianClick = () => {
-    changeIndex();
-  };
+const Cart = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   const dispatch = useDispatch();
-  const handleAddItem = (item) => {
-    dispatch(addItem(item));
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
   };
+
   return (
-    <div
-      className=" bg-gray-100 my-4 py-4 px-10 w-[70%] cursor-pointer shadow-lg rounded-md"
-      onClick={onAccordianClick}
-    >
-      <div className=" flex justify-between mb-4">
-        <h1 className="font-bold">{data.title}</h1>
-        <button>{showItems ? "⬆️" : "⬇️"}</button>
-      </div>
-      <ul>
-        {showItems &&
-          data.itemCards.map((each) => (
+    <div className="min-h-[80vh]">
+      <h1 className="text-center text-2xl font-bold my-3">Cart</h1>
+      <div className="w-[50vw] m-auto">
+        <button
+          className="bg-black text-white rounded p-2"
+          onClick={handleClearCart}
+        >
+          Clear cart
+        </button>
+        <ul>
+          {cartItems.map((each) => (
             <li className="border-b flex justify-between mb-3 pb-3 hover:bg-gray-200 items-center">
               <div>
                 <h1 className="text-left">{each.card.info.name}</h1>
@@ -46,9 +45,10 @@ const MenuInfo = (props) => {
               </div>
             </li>
           ))}
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default MenuInfo;
+export default Cart;

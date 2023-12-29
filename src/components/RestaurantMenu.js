@@ -5,7 +5,7 @@ import MenuInfo from "./MenuInfo";
 const RestaurantMenu = () => {
   const [restaurantInfo, setRestaurantInfo] = useState(null);
 
-  const [showIndex, setShowIndex] = useState(0);
+  const [showIndex, setShowIndex] = useState();
 
   useEffect(() => {
     fetchData();
