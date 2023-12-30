@@ -30,7 +30,7 @@ const Header = () => {
           <li>Contact us</li>
         </Link>
         <Link to="/cart" className="mr-5 font-bold">
-          <li>Cart - ({cartItems.length}-items)</li>
+          <li>Cart - ({cartItems.length} items)</li>
         </Link>
 
         <li>

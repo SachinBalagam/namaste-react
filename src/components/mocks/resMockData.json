@@ -1,0 +1,54 @@
+{
+  "id": "662878",
+  "name": "SLNS Dosa House",
+  "cloudinaryImageId": "f1bc9ddf53de574cdc35ab2f717df234",
+  "locality": "Padmavathi Colony",
+  "areaName": "Marlu",
+  "costForTwo": "₹150 for two",
+  "cuisines": ["South Indian"],
+  "avgRating": 4.2,
+  "veg": true,
+  "parentId": "397613",
+  "avgRatingString": "4.2",
+  "totalRatingsString": "100+",
+  "sla": {
+    "deliveryTime": 14,
+    "lastMileTravel": 1.7,
+    "serviceability": "SERVICEABLE",
+    "slaString": "14 mins",
+    "lastMileTravelString": "1.7 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2023-12-30 12:30:00",
+    "opened": true
+  },
+  "badges": {},
+  "isOpen": true,
+  "aggregatedDiscountInfoV2": {},
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {},
+      "textBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {}
+}

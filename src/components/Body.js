@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import RestaurantCard, { WithPromotedLabel } from "./RestaurantCard";
 // import mockData from "../utils/mockData";
 import { useState, useEffect, useContext } from "react";
 import UserContext from "../utils/UserContext";
@@ -11,7 +11,7 @@ const Body = () => {
   );
   const [searchText, setSearchText] = useState([]);
 
-  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard);
 
   const { name, setUserName } = useContext(UserContext);
 
@@ -95,11 +95,14 @@ const Body = () => {
         {filteredListofRestaurants.map((eachRes) =>
           eachRes.info.isOpen ? (
             <Link key={eachRes.info.id} to={`/restaurant/${eachRes.info.id}`}>
-              <RestaurantCardPromoted key={eachRes.info.id} data={eachRes} />
+              <RestaurantCardPromoted
+                key={eachRes.info.id}
+                data={eachRes?.info}
+              />
             </Link>
           ) : (
             <Link key={eachRes.info.id} to={`/restaurant/${eachRes.info.id}`}>
-              <RestaurantCard data={eachRes} />
+              <RestaurantCard data={eachRes?.info} />
             </Link>
           )
         )}
